@@ -2,7 +2,6 @@ import React from "react";
 import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../layouts/MainLayout";
 import HomeLayout from "../layouts/HomeLayout";
-import ErrorPage from "../pages/errorPage/ErrorPage";
 import SignUp from "../pages/SignUp/SignUp";
 import SignIn from "../pages/SignIn/SignIn";
 import Dashboard from "../pages/Dashboard/Dashboard";
@@ -16,6 +15,7 @@ import ChatHistory from "../pages/ChatHistory/ChatHistory";
 import ForgotPassword from "../pages/ForgotPassword/ForgotPassword";
 import VideoCall from "../pages/Video/VideoCall";
 import PaymentPage from "../payment/PaymentPage";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
 const Routes = createBrowserRouter([
   {
@@ -41,9 +41,11 @@ const Routes = createBrowserRouter([
       },
       {
         path: "/profile",
-        element: <PrivateRoute>
-          <ProfileDetails />
-        </PrivateRoute>
+        element: (
+          <PrivateRoute>
+            <ProfileDetails />
+          </PrivateRoute>
+        ),
       },
       // {
       //   path: "/editProfile",
@@ -53,7 +55,11 @@ const Routes = createBrowserRouter([
       // },
       {
         path: "/dashboard",
-        element: <PrivateRoute><Dashboard /></PrivateRoute>
+        element: (
+          <PrivateRoute>
+            <Dashboard />
+          </PrivateRoute>
+        ),
       },
       // {
       //   path: '/video-call',
@@ -61,29 +67,32 @@ const Routes = createBrowserRouter([
       // }
       // payment
       {
-        path: '/payment',
-        element: <PaymentPage />
-      }
+        path: "/payment",
+        element: <PaymentPage />,
+      },
     ],
   },
   {
-    path: '/meeting',
-    element: <PrivateRoute><MeetingLayoutes></MeetingLayoutes></PrivateRoute>,
+    path: "/meeting",
+    element: (
+      <PrivateRoute>
+        <MeetingLayoutes></MeetingLayoutes>
+      </PrivateRoute>
+    ),
     children: [
       {
-        path: '/meeting',
-        element: <MeetingFunctionpage />
+        path: "/meeting",
+        element: <MeetingFunctionpage />,
       },
       {
-        path: '/meeting/chat-history',
-        element: <ChatHistory />
+        path: "/meeting/chat-history",
+        element: <ChatHistory />,
       },
       {
-        path: '/meeting/video-call',
-        element: <VideoCall />
+        path: "/meeting/video-call",
+        element: <VideoCall />,
       },
-      
-    ]
+    ],
   },
 ]);
 

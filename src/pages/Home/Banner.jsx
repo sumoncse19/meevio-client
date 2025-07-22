@@ -1,8 +1,4 @@
-import React from "react";
-import { motion } from "framer-motion";
-import banner from "../../assets/banner.png";
-import dot from "../../assets/dot.png"
-import bannerVideo from "../../assets/bannerVideo.mp4"
+import bannerVideo from "../../assets/bannerVideo.mp4";
 const Banner = () => {
   return (
     <div id="banner" className="w-full bg-[#151515]">
@@ -14,7 +10,9 @@ const Banner = () => {
               <h1 className="text-5xl md:text-6xl font-bold mb-6 ">
                 Crystal-Clear Video Calls,
                 <br />
-                <span className="animated-gradient-text">Anytime, Anywhere!</span>
+                <span className="animated-gradient-text">
+                  Anytime, Anywhere!
+                </span>
               </h1>
               <p className="text-xl text-gray-300 mb-10 max-w-2xl">
                 Build engaging video and voice experiences with our powerful API
@@ -39,12 +37,9 @@ const Banner = () => {
                   muted
                   playsInline
                 >
-                  <source
-                    src={bannerVideo}
-                    type="video/mp4"
-                  />
+                  <source src={bannerVideo} type="video/mp4" />
                   Your browser does not support the video tag.
-                </video> 
+                </video>
                 <div className="absolute inset-0 bg-gradient-to-r from-[#000000]/80 to-transparent pointer-events-none"></div>
                 <div className="absolute bottom-4 right-4 flex items-center gap-2">
                   <div
@@ -58,7 +53,8 @@ const Banner = () => {
                     onClick={() => {
                       const audio = document.getElementById("bgMusic");
                       const volumeIcon = document.getElementById("volumeIcon");
-                      const volumeToast = document.getElementById("volumeToast");
+                      const volumeToast =
+                        document.getElementById("volumeToast");
                       if (audio.paused) {
                         audio.play();
                         volumeIcon.className = "fas fa-volume-up";
@@ -95,12 +91,14 @@ const Banner = () => {
             Trusted by thousands of developers worldwide
           </p>
           <div className="flex flex-wrap justify-center gap-12">
-            {["Microsoft", "Google", "Amazon", "Meta", "Zoom"].map((company) => (
-              <div key={company} className="flex items-center text-gray-400">
-                <i className="fa fa-building mr-2"></i>
-                <span className="text-sm font-medium">{company}</span>
-              </div>
-            ))}
+            {["Microsoft", "Google", "Amazon", "Meta", "Zoom"].map(
+              (company) => (
+                <div key={company} className="flex items-center text-gray-400">
+                  <i className="fa fa-building mr-2"></i>
+                  <span className="text-sm font-medium">{company}</span>
+                </div>
+              )
+            )}
           </div>
         </section>
       </div>
