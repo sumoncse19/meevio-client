@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg_dot {
+    background: url('https://i.ibb.co.com/kYHR46Y/Image-72-1.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: #151515;
+}
+
+.animated-gradient-text { 
+    /* Adjust as needed */
+    font-weight: bold;
+    /* Optional for emphasis */
+    background: linear-gradient(to right,
+            #32c6fc 0%,
+            #8659d3 50%,
+            #32c6fc 100%);
+    background-size: 200% 100%;
+    /* Double the width for smooth animation */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    /* Makes text transparent to show gradient */
+    display: inline-block;
+    /* Ensures proper rendering */
+    animation: gradientFlow 2s ease infinite;
+    /* Animation properties */
+}
+
+@keyframes gradientFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 200% 50%;
+        /* Moves gradient to the right */
+    }
+}
